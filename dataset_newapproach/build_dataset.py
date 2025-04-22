@@ -17,7 +17,7 @@ If the text is already modern and simple, return it as is. Do not add any introd
 {}
 """
 
-client = genai.Client(api_key="AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0")
+client = genai.Client(api_key="AIzaSyDL-tR5qzjRvqIkcOz2GetiLe24skE43uA") # "AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0"
 
 with open('dataset.txt', 'a') as output_file:
     #output_file.write("ORIGINAL\tCONTEXT\tTRANSLATED\n")
@@ -26,7 +26,7 @@ with open('dataset.txt', 'a') as output_file:
         if i % 50 == 0:
             print(f"Translated {i} of {len(pieces)} lines.")
         if (i+1) % 15 == 0:
-            time.sleep(60)
+            time.sleep(61)
         
         inp = prompt.format(context, piece)
         translation = client.models.generate_content(
