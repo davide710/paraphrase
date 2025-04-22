@@ -3,13 +3,12 @@ from google import genai
 import time
 
 
-df = pd.read_csv('orig.txt', sep='\t')
-
+df = pd.read_csv('todo.txt', sep='\t')
 pieces = df['sub_sentence'].tolist()
 contexts = df['context'].tolist()
 
 prompt = """Translate the piece of text in PIECE to modern and simpler English, keeping the meaning intact. Use the CONTEXT to help you understand the piece of text.
-If the text is already modern and simple, return it as is. Do not add any introduction, extra text or explanation, just answer with the translation.
+If the text is already modern and simple, return it as is. Do not add any introduction, extra text or explanation, just answer with the translation. Do not add new lines.
 
 ### CONTEXT:
 {}
@@ -20,12 +19,12 @@ If the text is already modern and simple, return it as is. Do not add any introd
 
 client = genai.Client(api_key="AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0")
 
-with open('dataset.txt', 'w') as output_file:
-    output_file.write("ORIGINAL\tCONTEXT\tTRANSLATED\n")
+with open('dataset.txt', 'a') as output_file:
+    #output_file.write("ORIGINAL\tCONTEXT\tTRANSLATED\n")
 
     for i, (piece, context) in enumerate(zip(pieces, contexts)):
         if i % 50 == 0:
-            print(f"Translated {i + 1} of {len(pieces)} lines.")
+            print(f"Translated {i} of {len(pieces)} lines.")
         if (i+1) % 15 == 0:
             time.sleep(60)
         
