@@ -30,6 +30,6 @@ with open('dataset.txt', 'a') as output_file:
         
         inp = prompt.format(context, piece)
         translation = client.models.generate_content(
-            model="gemini-2.0-flash", contents=inp,
+            model="gemini-2.0-flash", contents=inp, # "gemini-2.0-flash-lite"
         ).text
         output_file.write(piece + "\t" + context + "\t" + translation + "\n")
