@@ -19,7 +19,7 @@ If the text is already modern and simple, return it as is. Do not add any introd
 client = genai.Client(api_key="AIzaSyDL-tR5qzjRvqIkcOz2GetiLe24skE43uA") # "AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0"
 
 with open('dataset_light.txt', 'a') as output_file:
-    output_file.write("ORIGINAL\tTRANSLATED\n")
+    #output_file.write("ORIGINAL\tTRANSLATED\n")
 
     for i, piece in enumerate(pieces):
         if i % 50 == 0:
@@ -29,6 +29,6 @@ with open('dataset_light.txt', 'a') as output_file:
         
         inp = prompt.format(piece)
         translation = client.models.generate_content(
-            model="gemini-2.0-flash", contents=inp, # "gemini-2.0-flash-lite"
+            model="gemini-2.0-flash-lite", contents=inp, # "gemini-2.0-flash-lite"
         ).text
-        output_file.write(piece + "\t" + "\t" + translation + "\n")
+        output_file.write(piece + "<--->" + translation + "\n")
