@@ -25,7 +25,7 @@ LINE:
 import time
 from google import genai
 
-client = genai.Client(api_key="AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0")
+client = genai.Client(api_key="api_key")
 with open("dataset_hamlet.txt", "w") as output_file:
     output_file.write("ORIGINAL\tTRANSLATED\n")
     for i, line in enumerate(data):

@@ -17,7 +17,7 @@ If the text is already modern and simple, return it as is. Do not add any introd
 {}
 """
 
-client = genai.Client(api_key="AIzaSyDL-tR5qzjRvqIkcOz2GetiLe24skE43uA") # "AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0"
+client = genai.Client(api_key="api_key")
 
 with open('dataset.txt', 'a') as output_file:
     #output_file.write("ORIGINAL\tCONTEXT\tTRANSLATED\n")

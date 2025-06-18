@@ -1,7 +1,7 @@
 from google import genai
 import os
 
-client = genai.Client(api_key="AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0")
+client = genai.Client(api_key="api_key")
 
 #prompt = """I will give you a line from a .txt of the Hamlet I want to reformat, and you will have to reformat it according to the following rules:
 #1. If it is the start of a character line, put it in the format: CHARACTER: line

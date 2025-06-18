@@ -10,7 +10,7 @@ LINE:
 {}
 """
 
-client = genai.Client(api_key="AIzaSyCKVVWt1_KGxsI_bnQvcMpyPEG0NkwGEH0")
+client = genai.Client(api_key="api_key")
 
 with open('dataset_tsop.txt', 'w') as output_file:
     output_file.write("ORIGINAL\tTRANSLATED\n")
